@@ -3,8 +3,10 @@ My solution for the Charter/Spectrum Front-End Code Challenge
 
 ## Local Development Setup
 1. Clone this repo
-2. run `npm install` in the root directory
-3. run `npm start`
+2. Run `npm install` in the root directory
+3. Add a .env file in the root directory
+4. Add `REACT_APP_API_KEY=api_key_here` to the newly created .env file.
+3. Run `npm start`
 4. The local development server should now be running on `localhost:3000`
 
 ## User Stories

@@ -1,7 +1,13 @@
 import React from 'react';
-import './App.css';
+import useFetch from './hooks/useFetch';
 
 function App() {
+  const {
+    restaurantData,
+    loading,
+    fetchError
+  } = useFetch();
+
   return (
     <div className="App">
 
