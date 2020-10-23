@@ -1,6 +1,9 @@
 import React from 'react';
 import useFetch from './hooks/useFetch';
 
+import { AppWrapper, Spinner } from './components/styledComponents';
+import Table from './components/Table';
+
 function App() {
   const {
     restaurantData,
@@ -8,12 +11,19 @@ function App() {
     fetchError
   } = useFetch();
 
-  console.log(restaurantData);
-
   return (
-    <div className="App">
+    <AppWrapper>
+      {loading ? (
+        <Spinner/>
+      ) : (
+        restaurantData.length > 0 ? (
+          <Table restaurantData={restaurantData}/>
+        ) : (
+          <p>{fetchError}</p>
+        )
+      )}
 
-    </div>
+    </AppWrapper>
   );
 }
 
