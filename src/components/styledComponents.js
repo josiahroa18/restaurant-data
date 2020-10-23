@@ -3,13 +3,49 @@ import theme from '../theme';
 
 export const AppWrapper = styled.div`
     width: 100%;
+    margin-left: 400px;
     height: 100vh;
     display: flex;
-    justify-content: center;
     y-overflow: scroll;
     padding-top: 50px;
 `;
 
+// SideBar Styles
+export const SideBar = styled.div`
+    width: 350px;
+    height: 100%;
+    background-color: ${theme.colors.neutral.grey};
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+export const OptionsContainer = styled.div`
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+`;
+
+export const Option = styled.div`
+    padding: 5px 10px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    color: ${theme.colors.neutral.white};
+    background-color: ${props => props.selected ? theme.colors.primary.blue : theme.colors.primary.lightBlue};
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .5s ease;
+    &:hover {
+        background-color: ${theme.colors.primary.blue};
+        transition: .5s ease;
+    }
+`;
+
+// Table Styles
 export const Table = styled.div`
     width: 1000px;
 `;

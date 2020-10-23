@@ -16,7 +16,7 @@ export default ({ isHeader, restaurant }) => {
                 {restaurant ? (
                     <TagContainer>
                         {restaurant.genres.map(genre => {
-                            return <Tag>{genre}</Tag>
+                            return <Tag key={genre}>{genre}</Tag>
                         })}
                     </TagContainer>                    
                 ) : 'Genres'}
