@@ -16,7 +16,15 @@ const useFetch = () => {
         setLoading(true);
         axios.get(API_ENDPOINT, { headers: HEADERS })
         .then(res => {
-            setRestaurantData(res.data);
+            setRestaurantData(res.data.map(restaurant => {
+                return {
+                    name: restaurant.name,
+                    city: restaurant.city,
+                    state: restaurant.state,
+                    telephone: restaurant.telephone,
+                    genre: restaurant.genre.split(',')
+                }
+            }));
             setLoading(false);
         })
         .catch(err => {

@@ -8,6 +8,8 @@ function App() {
     fetchError
   } = useFetch();
 
+  console.log(restaurantData);
+
   return (
     <div className="App">
 
