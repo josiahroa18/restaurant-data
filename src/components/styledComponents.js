@@ -99,6 +99,30 @@ export const Tag = styled.div`
     border-radius: 10px;
 `;
 
+export const PageNavigator = styled.div`
+    width: 100%;
+    height: 50px;
+    display: flex;
+`;
+
+export const PageChanger = styled.div`
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid ${theme.colors.neutral.grey};
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: ${props => props.currentPage && theme.colors.neutral.grey};
+    transition: .5s ease;
+    &:hover{
+        background-color:${theme.colors.neutral.grey};
+        transition: .5s ease;
+    }
+`;
+
 const spin = keyframes`
     from {
         transform: rotate(0deg);
