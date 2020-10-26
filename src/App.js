@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import useFetch from './hooks/useFetch';
 
 import getStateOptions from './utils/getStateOptions';
@@ -44,7 +44,7 @@ function App() {
 
   // Take the response from getStateOptions and store it in state
   useEffect(() => {
-    if(!(Object.keys(stateOptions).length > 0)){
+    if(Object.keys(stateOptions).length < 1){
       setStateOptions(stateResponse);
     }
   }, [stateResponse])
@@ -52,25 +52,31 @@ function App() {
   // Take the response from getGenreOptions and store it in state
   const restaurantDataReady = restaurantData.length > 0
   useEffect(() => {
-    if(!(Object.keys(genreOptions).length > 0)){
+    if(Object.keys(genreOptions).length < 1 && restaurantDataReady){
       setGenreOptions(genreResponse);
     }
   }, [restaurantDataReady, genreResponse])
 
-  const SideBarProps = {
+  const sideBarProps = {
     stateOptions,
     genreOptions,
     handleSelect
   }
 
+  const tableProps = {
+    restaurantData,
+    stateOptions,
+    genreOptions
+  }
+
   return (
     <AppWrapper>
-      <SideBar {...SideBarProps}/>
+      <SideBar {...sideBarProps}/>
       {loading ? (
         <Spinner/>
       ) : (
         restaurantData.length > 0 ? (
-            <Table restaurantData={restaurantData}/>
+            <Table {...tableProps}/>
         ) : (
           <p>{fetchError}</p>
         )
