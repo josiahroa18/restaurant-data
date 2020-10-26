@@ -7,6 +7,7 @@ export default ({searchInput, handleChange}) => {
             <input
                 value={searchInput}
                 onChange={handleChange}
+                placeholder='Search by name, city, or genre'
             />
         </Search>
     )

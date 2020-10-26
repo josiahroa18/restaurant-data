@@ -40,15 +40,17 @@ export default props => {
 
     return (
         <Table>
-            <Search
-                searchInput={searchInput}
-                handleChange={handleInputChange}
-            />
-            <PageNavigator
-                currentPage={currentPage}
-                pageNumbers={pageNumbers}
-                handleChange={handlePageChange}
-            />
+            <div className='top-wrapper'>
+                <PageNavigator
+                    currentPage={currentPage}
+                    pageNumbers={pageNumbers}
+                    handleChange={handlePageChange}
+                />
+                <Search
+                    searchInput={searchInput}
+                    handleChange={handleInputChange}
+                />                
+            </div>
             <Row isHeader={true}/>
             {paginatedState.length > 0 ? (paginatedState.map(restaurant => {
                 return <Row restaurant={restaurant} key={restaurant.id}/>
@@ -57,11 +59,13 @@ export default props => {
                     <p>No results</p>
                 </div>
             )}
-            <PageNavigator
-                currentPage={currentPage}
-                pageNumbers={pageNumbers}
-                handleChange={handlePageChange}
-            />
+            <div className='bottom-wrapper'>
+                <PageNavigator
+                    currentPage={currentPage}
+                    pageNumbers={pageNumbers}
+                    handleChange={handlePageChange}
+                />
+            </div>
         </Table>
     );
 }

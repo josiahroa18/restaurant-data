@@ -46,12 +46,28 @@ export const Option = styled.div`
 `;
 
 export const Search = styled.div`
-    
+    input {
+        width: 400px;
+        height: 30px;
+        font-size: 18px;
+    }
 `;
 
 // Table Styles
 export const Table = styled.div`
     width: 1000px;
+    .top-wrapper {
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    .bottom-wrapper {
+        padding: 0 20px;
+        margin-top: 20px;
+        margin-bottom: 60px;
+    }
 `;
 
 export const Row = styled.div`
@@ -100,8 +116,6 @@ export const Tag = styled.div`
 `;
 
 export const PageNavigator = styled.div`
-    width: 100%;
-    height: 50px;
     display: flex;
 `;
 
