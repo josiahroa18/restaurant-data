@@ -45,6 +45,10 @@ export const Option = styled.div`
     }
 `;
 
+export const Search = styled.div`
+    
+`;
+
 // Table Styles
 export const Table = styled.div`
     width: 1000px;
